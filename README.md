@@ -53,9 +53,12 @@ pip install -e .
 
 ### Requirements
 
-- Python 3.10+
-- ~500MB disk (Pocket TTS model downloads on first run)
-- Works on macOS (Apple Silicon + Intel) and Linux
+- **Python 3.10+** — check with `python3 --version`
+- **pip** — check with `pip --version` (or `pip3 --version`)
+- ~500MB disk for dependencies (PyTorch + Pocket TTS model, downloaded once on first install)
+- Works on macOS (Apple Silicon + Intel)
+
+> **First install takes 2-5 minutes** due to PyTorch download. Subsequent installs are fast. If you're on Apple Silicon and torch install hangs, try: `pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu` first.
 
 ## Usage
 

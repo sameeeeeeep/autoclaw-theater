@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autoclaw-theater"
+version = "0.1.0"
+description = "TTS sidecar for Autoclaw Theater Mode — Pocket TTS voice server with character voices"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "The Last Prompt", email = "hello@thelastprompt.ai"},
+]
+keywords = ["tts", "voice", "autoclaw", "theater", "pocket-tts"]
+
+dependencies = [
+    "pocket-tts",
+    "torch",
+    "soundfile",
+    "numpy",
+    "fastapi",
+    "uvicorn[standard]",
+]
+
+[project.scripts]
+autoclaw-theater = "autoclaw_theater.server:main"
+
+[project.urls]
+Homepage = "https://github.com/sameeeeeeep/autoclaw-theater"
+Repository = "https://github.com/sameeeeeeep/autoclaw-theater"
+
+[tool.setuptools.packages.find]
+include = ["autoclaw_theater*"]
+
+[tool.setuptools.package-data]
+autoclaw_theater = ["voices/**/*", "pocket_voices/*.safetensors"]
